@@ -13,10 +13,18 @@ class MyButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialButton(
+    return Container(
+      width:80.0,
+      height: 40.0,
+child:MaterialButton(
+
       onPressed: onPressed,
       color: const Color.fromARGB(255, 255, 112, 64), // kaydet iptal butonunun rengi
-      child: Text(text),
+      child: Text(text), 
+
+    ) 
     );
+    
+     
   }
 }

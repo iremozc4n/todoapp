@@ -3,7 +3,19 @@ import 'package:todo_app/util/my_button.dart';
 
 
 class DialogBox extends StatelessWidget {
-  const DialogBox({super.key});
+  final controller;
+  VoidCallback onSave;
+VoidCallback onCancel;
+
+  DialogBox({
+    super.key, 
+    required this.controller,
+    required this.onSave,
+    required this.onCancel,
+    
+    
+    
+    });
 
   @override
   Widget build(BuildContext context) {
@@ -14,6 +26,7 @@ class DialogBox extends StatelessWidget {
         child: Column(children: [
           //input almak için
           TextField(
+            controller: controller,
             decoration: InputDecoration(
               border: OutlineInputBorder(),
               hintText:"Add a new task"
@@ -26,9 +39,9 @@ class DialogBox extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.spaceEvenly, //yatayda ortalar
             children: [
               //save buttonnn
-              MyButton(text: "Kaydet", onPressed: (){}),
+              MyButton(text: "Kaydet", onPressed: onSave),
               //iptal
-                MyButton(text: "İptal", onPressed: (){}),
+                MyButton(text: "İptal", onPressed: onCancel),
 
             ],
           )
